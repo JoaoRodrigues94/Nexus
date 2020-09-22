@@ -1,0 +1,26 @@
+{% extends "modelpage.html" %}
+
+{% block content %}
+<form action="submit" method="POST">{% csrf_token %}
+    <h2>Álbum</h2>
+    <input type="number" name="id_album" value="{{ albuns.id }}" hidden>
+    <br>
+    <label>Título do Álbum</label>
+    <br>
+    <input type="text" name="titulo" value="{{ albuns.titulo_album}}">
+    <br>
+    <label>Artísta</label>
+    <br>
+    <input type="text" name="artista" value="{{ albuns.artista}}">
+    <br>
+    <label>Genero</label>
+    <br>
+    <input type="text" name="genero" value="{{ albuns.genero}}" >
+    <br><br>
+
+    <button type="submit">Confirmar</button>
+    <a href="/">
+        <button type="button">Cancelar</button>
+    </a>
+</form>
+{% endblock %}

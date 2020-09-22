@@ -1,0 +1,17 @@
+{% extends "modelpage.html" %}
+
+{% block content %}
+    <a href="criar/"> <!-- Cria um link de direcionamento -->
+        <button type="button"> Criar Álbum </button>
+    </a>
+    <ul style="font-size: 18px">
+        {% for albun in albuns %}
+            <li>
+                {{ albun.titulo_album }} - {{ albun.artista }} - {{ albun.genero }}
+
+                (<a href="criar/?id={{ albun.id }}">Editar</a>
+                / <a href="criar/delete/{{albun.id }}/">Excluir</a> )
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

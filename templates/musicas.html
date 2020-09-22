@@ -1,0 +1,21 @@
+{% extends "modelpage.html" %}
+
+{% block content %}
+<form action="submit" method="POST">{% csrf_token %}
+    <h2>Adicione músicas no álbum.</h2>
+    <br>
+    <label>Nome da música</label>
+    <br>
+    <input type="text" name="musica">
+    <br>
+    <label>Artísta</label>
+    <br>
+    <input type="text" name="artistam">
+    <br><br>
+
+    <button type="submit">Confirmar</button>
+    <a href="/">
+        <button type="button">Cancelar</button>
+    </a>
+</form>
+{% endblock %}
